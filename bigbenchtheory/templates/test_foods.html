@@ -1,13 +1,24 @@
 <html>
 <head>
-	<title>Big Bench Theory nigga</title>
+	<title>Big Bench Theory</title>
 
 </head>
 
 <body>
 	<h1>Sup nigga</h1>
 
+	{% if error %}
+        <p style="color: red;font: 16px">Please fill out all fields.</p>
+    {% endif %}
+
 	<p> Waz good you tryina bench hella heavy? Well you come to the right
 		place. This is where real niggas bench real heavy.
 
-	<form action=""
+	<form action="/food/" method="post">
+		Pick a food {{form.foods}} <br><br>
+
+		{% csrf_token %}
+        <input type="submit" value="Submit">
+	</form>
+</body>
+</html>

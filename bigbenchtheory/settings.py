@@ -19,6 +19,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's!q!wmmstl2rl&u^r!n-93au_jj*(!!k=f2h+e5=n3evs!_dk7'
 
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
+)
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -52,6 +59,11 @@ ROOT_URLCONF = 'bigbenchtheory.urls'
 
 WSGI_APPLICATION = 'bigbenchtheory.wsgi.application'
 
+TEMPLATE_DIRS = (os.path.join(os.getcwd(), 'bigbenchtheory/templates/'),
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
